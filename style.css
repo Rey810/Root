@@ -139,7 +139,7 @@ section.left {
 .map-container {
   height: 50%;
   border-radius: 8px;
-  background-image: url("/media/images/map.png");
+  background-image: url("./media/images/map.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -195,7 +195,7 @@ section.left {
 /* /////////////////////*/
 
 .graph-container {
-  background-image: url("/media/images/graph.png");
+  background-image: url("./media/images/graph.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
