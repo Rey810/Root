@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Root</title>
+    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="/" class="logo-container">
+        <div class="logo">
+          <i class="material-icons graph"> architecture </i>
+        </div>
+        <div class="brand">Root</div>
+      </a>
+      <div class="menu-links">
+        <a href="/">My Profile</a>
+        <a href="/">Sign Out</a>
+      </div>
+    </header>
+    <main class="center-children">
+      <section class="left">
+        <div class="searchbar">
+          <i class="material-icons">search</i>
+          <input type="text" placeholder="Search location..." />
+        </div>
+        <div class="map-container"></div>
+        <div class="graph-container">
+          <div class="toggle-wrapper">
+            <div class="graph toggle-container">
+                <div class="graph toggle-label-container">
+                  <div class="graph label-one">
+                    <input type="radio" name="graph_type" id="elevation" checked />
+                    <label for="elevation">Elevation</label>
+                    <div class="graph toggle-slider" data-type="large_toggle"></div>
+                  </div>
+                  <div class="graph label-two">
+                    <input type="radio" name="graph_type" id="gradient" />
+                    <label for="gradient">Gradient</label>
+                  </div>
+                </div>
+          </div>
+        </div>
+      </section>
+      <section class="right">
+        <h1>Root Controller</h1>
+        <!--Card Content-->
+        <div class="controller">
+          <div class="card-header">
+            <div class="toggle-container">
+              <div class="toggle-label-container">
+                <div class="label-one">
+                  <input type="radio" name="modal_type" id="generate" checked />
+                  <label for="generate">Generate</label>
+                  <div class="toggle-slider" data-type="large_toggle"></div>
+                </div>
+                <div class="label-two">
+                  <input type="radio" name="modal_type" id="draw_my_own" />
+                  <label for="draw_my_own">Draw My Own</label>
+                </div>
+              </div>
+            </div>
+            <div class="refresh-container">
+              <i class="material-icons"> loop </i>
+              <span>Refresh</span>
+            </div>
+          </div>
+          <div class="card-main">
+            <div class="card-left">
+              <div class="activity-container">
+                <h2>Activity</h2>
+                <span class="options-instructions">(Select one activity)</span>
+                <div class="options-container">
+                  <input
+                    type="radio"
+                    name="activity"
+                    value="walking"
+                    id="walking"
+                  /><label class="card-radio-label" for="walking"
+                    ><i class="material-icons"> directions_walk </i
+                    >Walking</label
+                  >
+
+                  <input
+                    type="radio"
+                    name="activity"
+                    value="running"
+                    id="running"
+                  /><label class="card-radio-label" for="running"
+                    ><i class="material-icons"> directions_run </i
+                    >Running</label
+                  >
+                  <input
+                    type="radio"
+                    name="activity"
+                    value="cycling"
+                    id="cycling"
+                  /><label class="card-radio-label" for="cycling"
+                    ><i class="material-icons"> directions_bike </i
+                    >Cycling</label
+                  >
+
+                  <input
+                    type="radio"
+                    name="activity"
+                    value="swimming"
+                    id="swimming"
+                  /><label class="card-radio-label" for="swimming"
+                    ><i class="material-icons"> pool </i>Swimming</label
+                  >
+                </div>
+              </div>
+              <div class="terrain-container">
+                <h2>Terrain</h2>
+                <span class="options-instructions"
+                  >(Select one terrain type)</span
+                >
+                <div class="options-container">
+                  <input type="radio" name="terrain" value="dirt" id="dirt" />
+                  <label class="card-radio-label" for="dirt">
+                    <i class="material-icons"> agriculture </i>Dirt</label
+                  >
+                  <input type="radio" name="terrain" value="road" id="road" />
+                  <label class="card-radio-label" for="road">
+                    <i class="material-icons"> emoji_transportation </i
+                    >Road</label
+                  >
+                  <input type="radio" name="terrain" value="both" id="both" />
+                  <label class="card-radio-label" for="both">
+                    <i class="material-icons"> track_changes </i>Both</label
+                  >
+                </div>
+              </div>
+              <div class="options-container">
+                <div class="distance-container">
+                  <h2>Distance</h2>
+                  <div class="distance-input-container">
+                    <i class="material-icons"> show_chart </i>
+                    <input
+                      type="number"
+                      placeholder="0.00"
+                      step="0.1"
+                      name="distance"
+                      id="distance"
+                    />
+                    <span>km</span>
+                  </div>
+                </div>
+                <div class="energy-container">
+                  <h2>Energy</h2>
+                  <div class="energy-input-container">
+                    <i class="material-icons"> local_fire_department </i>
+                    <input
+                      type="number"
+                      placeholder="0.00"
+                      step="0.1"
+                      name="energy"
+                      id="energy"
+                    />
+                    <span>kJ</span>
+                  </div>
+                </div>
+              </div>
+              <button class="generate-root">Generate</button>
+            </div>
+            <div class="card-right">
+              <h2>Draw Tools</h2>
+              <div class="center-children">
+                <div class="controls-container">
+                  <div class="control">
+                    <i class="material-icons"> play_arrow </i>
+                    <span>Play</span>
+                  </div>
+                  <div class="control">
+                    <i class="material-icons"> stop </i>
+                    <span>Stop</span>
+                  </div>
+                  <div class="control">
+                    <i class="material-icons"> settings_backup_restore </i>
+                    <span>Close Loop</span>
+                  </div>
+                  <div class="control">
+                    <i class="material-icons"> undo </i>
+                    <span>Undo</span>
+                  </div>
+                  <div class="control">
+                    <i class="material-icons"> sync_alt </i>
+                    <span>Out & Back</span>
+                  </div>
+                  <div class="control">
+                    <i class="material-icons"> print </i>
+                    <span>Print Root</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="save-root-container">
+                <h3>Save Root</h3>
+                <div class="save-root-input-container">
+                  <input
+                    type="text"
+                    name="Save Root"
+                    id=""
+                    placeholder="Root Name..."
+                  />
+                  <button>
+                    <i class="material-icons"> save_alt </i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,637 @@
+/* !important indicates an overriding of Material IO CDN styles unless otherwise specified*/
+
+:root {
+  /* SPACING */
+  --spacing-0: 0.25rem; /* 4px */
+  --spacing-1: 0.5rem; /* 8px */
+  --spacing-2: 1rem; /* 16px */
+  --spacing-3: 1.5rem; /* 24px */
+  --spacing-4: 2rem; /* 32px */
+  --spacing-5: 2.5rem; /* 40px */
+  --spacing-6: 3rem; /* 48px */
+  --spacing-7: 3.5rem; /* 56px */
+  --spacing-8: 4rem; /* 64px */
+  --spacing-9: 4.5rem; /* 72px */
+  --spacing-10: 5rem; /* 80px  */
+  --spacing-11: 5.5rem; /* 88px */
+  --spacing-12: 6rem; /* 96px */
+  --spacing-17: 8.5rem; /* 136px */
+
+  /* COLOURS */
+  --background-color: hsl(0, 0%, 97%);
+  --white-opaque-75: hsla(0, 0%, 100%, 75%);
+  --black-opaque-75: hsla(0, 0%, 0%, 75%);
+  /* Header color */
+  --color-dark-1: hsl(0, 0%, 20%);
+  /* Input icons and input tex */
+  --color-dark-2: hsl(210, 12%, 61%);
+  /* Mini Card BG, main toggle */
+  --color-dark-3: #454545;
+  /* Brand color */
+  --brand-color: hsl(14, 84%, 53%);
+  --brand-color-hover: hsl(14, 96%, 59%);
+  /* Used for opaque backgrounds */
+  --brand-color-light: hsla(14, 84%, 53%, 0.19);
+  /* used as a stark white where needed */
+  --card-color: hsl(0, 0%, 98%);
+  /* Input Colours (2 variations) */
+  --light-input-bg-color: hsl(0, 0%, 91%);
+  --light-input-bg-color-: #eff0f1;
+  --dark-input-bg-color: #575757;
+  --dark-input-text-color: #9c9c9c;
+
+  /* FONT SIZING */
+  --xl: 32px;
+  --lg: 24px;
+  --base: 16px;
+  --md: 14px;
+  --sm: 12px;
+  --xs: 10px;
+  --xxs: 8px;
+
+  /* SECTION HEIGHT */
+  --desktop-section-height: 656px;
+  --desktop-section-width: 720px;
+}
+
+/* Base Styles */
+* {
+  /* border: 1px solid red; */
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background-color: var(--background-color);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h2 {
+  font-size: var(--sm);
+  font-weight: 600;
+  margin: 0;
+  margin-bottom: var(--spacing-2);
+}
+
+button,
+.refresh-container {
+  cursor: pointer;
+}
+
+header {
+  height: var(--spacing-7);
+  background-color: var(--color-dark-1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--white-opaque-75);
+}
+
+.menu-links {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.menu-links a {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 var(--spacing-5);
+}
+
+.menu-links a:hover {
+  color: var(--white-opaque-75);
+  background-color: var(--dark-input-bg-color);
+}
+
+.logo-container {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  padding-left: var(--spacing-5);
+}
+
+main {
+  margin: 0 auto;
+  margin-top: var(--spacing-6);
+}
+
+/* Utility class */
+.center-children {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ////////////////////////////////////////// */
+/* Targets the map and graph containing area. LEFT */
+/* ////////////////////////////////////////// */
+section.left {
+  height: var(--desktop-section-height);
+  width: calc(var(--desktop-section-width) * 1.25);
+  margin-right: var(--spacing-4);
+}
+
+.map-container {
+  height: 50%;
+  border-radius: 8px;
+  background-image: url("/media/images/map.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.graph-container {
+  height: 41%;
+  border-radius: 8px;
+}
+
+.map-container,
+.graph-container {
+  background-color: var(--placeholder-color);
+}
+
+.searchbar {
+  background-color: var(--light-input-bg-color);
+  color: var(--color-dark-2);
+  padding: var(--spacing-2);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  width: 50%;
+}
+
+.searchbar input {
+  background-color: inherit;
+  border: none;
+  padding-left: var(--spacing-1);
+  margin-left: var(--spacing-1);
+  outline: none;
+  color: var(--color-dark-2);
+  font-weight: 600;
+}
+
+.searchbar i {
+  font-size: var(--base) !important;
+}
+
+.searchbar input::placeholder {
+  color: var(--color-dark-2);
+  font-weight: 600;
+  font-size: var(--md);
+}
+
+.map-container {
+  margin-top: var(--spacing-3);
+  margin-bottom: var(--spacing-2);
+}
+
+/* ///////////////////////*/
+/* GRAPH TOGGLE SWITCH */
+/* /////////////////////*/
+
+.graph-container {
+  background-image: url("/media/images/graph.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.graph-container .toggle-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.graph.toggle-container {
+  grid-column: 1;
+  z-index: 10;
+  position: relative;
+  height: var(--spacing-3);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--brand-color);
+  border-radius: 4px;
+  margin: var(--spacing-2);
+}
+
+.graph.toggle-slider {
+  position: absolute;
+  background-color: var(--card-color);
+  border-radius: 3px;
+  left: 0%;
+  margin: 0 1px;
+}
+
+/* Slider transform */
+.graph.label-one [type="radio"]:not(:checked) ~ .toggle-slider {
+  transform: translateX(98%);
+}
+
+.graph.label-one [type="radio"]:checked ~ .toggle-slider {
+  left: 0%;
+}
+
+/* Checked-dependent text color */
+.graph.label-one [type="radio"]:checked ~ label,
+.graph.label-two [type="radio"]:checked ~ label {
+  color: var(--brand-color);
+}
+
+.graph.label-one [type="radio"]:not(:checked) ~ label,
+.graph.label-two [type="radio"]:not(:checked) ~ label {
+  color: var(--white-opaque-75);
+}
+
+.graph.label-one [type="radio"]:checked ~ i,
+.graph.label-two [type="radio"]:checked ~ i {
+  color: var(--brand-color) !important;
+}
+
+.graph.label-one [type="radio"]:not(:checked) ~ i,
+.graph.label-two [type="radio"]:not(:checked) ~ i {
+  color: var(--white-opaque-75) !important;
+}
+
+.graph.toggle-label-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.graph.toggle-label-container .label-one,
+.graph.toggle-label-container .label-two {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  text-align: center;
+}
+
+.graph.toggle-label-container label {
+  font-size: var(--sm);
+  font-weight: 600;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 30;
+  margin-left: var(--spacing-0);
+}
+
+/* stacks icon on same level as label text */
+.graph i {
+  z-index: 30;
+  position: absolute;
+  padding-left: var(--spacing-1);
+  font-size: var(--base) !important;
+}
+
+/* //////////////////////*/
+/* END OF TOGGLE SWITCH */
+/* /////////////////////*/
+
+/* ////////////////////////////////////////// */
+/* Targets the controller containing area. RIGHT */
+/* ////////////////////////////////////////// */
+section.right {
+  height: var(--desktop-section-height);
+}
+
+section.right h1 {
+  margin: 0;
+  margin-top: var(--spacing-2);
+  font-size: var(--spacing-3);
+  margin-bottom: var(--spacing-3);
+  color: var(--color-dark-1);
+}
+
+.controller {
+  width: 720px;
+  background-color: var(--card-color);
+  border-radius: 8px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  padding: var(--spacing-6);
+}
+
+.card-header {
+  grid-row: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: var(--spacing-4);
+}
+
+/* ///////////////////////*/
+/* HEADER TOGGLE SWITCH */
+/* /////////////////////*/
+.toggle-container {
+  z-index: 10;
+  position: relative;
+  grid-column: 2;
+  height: var(--spacing-5);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--color-dark-3);
+  border-radius: 4px;
+}
+
+.toggle-slider {
+  position: absolute;
+  background-color: var(--brand-color);
+  width: 50%;
+  height: 90%;
+  background-color: var(--card-color);
+  border-radius: 3px;
+  left: 0%;
+  margin: 0 2px;
+}
+
+/* Slider transform */
+.label-one [type="radio"]:not(:checked) ~ .toggle-slider {
+  transform: translateX(116px);
+}
+
+.label-one [type="radio"]:checked ~ .toggle-slider {
+  left: 0%;
+}
+
+/* Checked-dependent text color */
+.label-one [type="radio"]:checked ~ label,
+.label-two [type="radio"]:checked ~ label {
+  color: var(--black-opaque-75);
+}
+
+.label-one [type="radio"]:not(:checked) ~ label,
+.label-two [type="radio"]:not(:checked) ~ label {
+  color: var(--white-opaque-75);
+}
+
+.toggle-label-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.toggle-label-container .label-one,
+.toggle-label-container .label-two {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  text-align: center;
+}
+
+.toggle-label-container label {
+  font-size: var(--sm);
+  font-weight: 600;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 30;
+}
+
+/* //////////////////////*/
+/* END OF TOGGLE SWITCH */
+/* /////////////////////*/
+
+.refresh-container {
+  margin-left: auto;
+  grid-column: 3;
+  color: var(--brand-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--xxs);
+}
+
+.refresh-container span {
+  margin-top: 2px;
+}
+
+.card-left h2 {
+  display: inline-block;
+  color: var(--black-opaque-75);
+}
+
+.card-main {
+  grid-row: 2/4;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: var(--spacing-7);
+}
+
+.card-left {
+  /* background-color: rgb(51, 195, 58); */
+}
+
+.activity-container,
+.terrain-container,
+.inputs-container {
+  margin-bottom: var(--spacing-4);
+}
+
+span.options-instructions {
+  font-style: italic;
+  font-size: var(--xs);
+  margin-left: var(--spacing-1);
+}
+
+.options-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: var(--spacing-2);
+}
+
+.options-container span {
+  padding-right: var(--spacing-1);
+  font-size: var(--sm);
+  font-weight: 700;
+}
+
+.options-container i {
+  margin: 0 var(--spacing-1);
+  font-weight: 700;
+}
+
+.distance-container input,
+.energy-container input {
+  outline: none;
+  border: none;
+  width: var(--spacing-7);
+  font-size: var(--base);
+  color: var(--color-dark-2);
+  background-color: var(--light-input-bg-color);
+  margin-left: auto;
+  font-weight: 600;
+  padding-left: var(--spacing-1);
+}
+
+.energy-input-container input::placeholder,
+.distance-input-container input::placeholder {
+  color: var(--color-dark-2);
+}
+
+.distance-input-container,
+.energy-input-container {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-1);
+  background-color: var(--light-input-bg-color);
+  color: var(--color-dark-2);
+  border-radius: 4px;
+}
+
+button.generate-root {
+  margin-top: var(--spacing-4);
+  width: 100%;
+  border-radius: 4px;
+  background-color: var(--brand-color);
+  padding: var(--spacing-2);
+  border: none;
+  color: var(--card-color);
+  font-weight: 600;
+}
+
+button.generate-root:hover {
+  background-color: var(--brand-color-hover);
+}
+
+label {
+  cursor: pointer;
+}
+
+label.card-radio-label {
+  display: flex;
+  justify-content: center;
+  background-color: var(--brand-color-light);
+  border: 1px solid;
+  color: var(--brand-color);
+  font-size: var(--md);
+  font-weight: 600;
+  padding: var(--spacing-1);
+  border-radius: 4px;
+}
+
+label.card-radio-label:hover,
+.options-container [type="radio"]:checked + label {
+  background-color: var(--brand-color-hover);
+  color: var(--card-color);
+}
+
+.options-container [type="radio"]:checked + label {
+  background-color: var(--brand-color);
+}
+
+label.card-radio-label i {
+  margin-right: var(--spacing-1);
+}
+
+.card-left i {
+  font-size: var(--md) !important;
+}
+
+/* HIDES RADIOBUTTON INPUTS */
+input[type="radio"] {
+  position: absolute;
+  left: 100vw;
+  left: -9000px;
+}
+
+/* Targets mini card with controllers within larger card */
+.card-right {
+  border-radius: 8px;
+  background-color: var(--color-dark-3);
+  color: var(--white-opaque-75);
+}
+
+.card-right h2 {
+  margin-top: var(--spacing-4);
+  margin-bottom: var(--spacing-3);
+  text-align: center;
+}
+
+.controls-container {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(2, var(--spacing-6));
+  row-gap: var(--spacing-5);
+  column-gap: var(--spacing-3);
+  margin: 0 auto;
+}
+
+.control {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.control:hover {
+  color: var(--card-color);
+}
+
+.control i {
+  font-size: var(--xl) !important;
+}
+
+.card-right span {
+  margin-top: var(--spacing-1);
+  font-size: var(--xxs);
+  font-weight: 700;
+}
+
+.card-right h3 {
+  font-size: var(--xs);
+  font-weight: normal;
+  margin-bottom: var(--spacing-1);
+}
+
+.save-root-container {
+  margin: var(--spacing-3);
+}
+
+.save-root-input-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 4px;
+  background-color: var(--dark-input-bg-color);
+  color: var(--dark-input-text-color);
+  padding: var(--spacing-1) var(--spacing-2);
+}
+
+.save-root-input-container input {
+  border: none;
+  padding-left: var(--spacing-2);
+  background-color: var(--dark-input-bg-color);
+  color: var(--dark-input-text-color);
+}
+
+.save-root-input-container input:focus {
+  outline: none;
+}
+
+.save-root-input-container button {
+  background: none;
+  border: none;
+  color: inherit;
+}
+
+.save-root-input-container button:hover {
+  color: var(--card-color);
+}
